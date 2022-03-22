@@ -1,8 +1,69 @@
 from django.contrib import admin
-from .models import Datos
+from app.clima.models import Datos
+from import_export.admin import ImportExportModelAdmin
+from import_export import resources
 
 
-class DatosAdmin(admin.ModelAdmin):
+class DatosResource(resources.ModelResource):
+    class Meta:
+        model = Datos
+        fields = (
+            "year",
+            "seq",
+            "glide",
+            "disaster_group",
+            "disaster_subgroup",
+            "disaster_type",
+            "disaster_subtype",
+            "event_name",
+            "country",
+            "iso",
+            "region",
+            "continent",
+            "location",
+            "associated_dis",
+            "dis_mag_value",
+            "dis_mag_scale",
+            "start_data",
+            "end_data",
+            "total_deaths",
+            "no_injured",
+            "no_affected",
+            "no_homeless",
+            "total_affected",
+            "total_damages",
+        )
+        export_order = (
+            "year",
+            "seq",
+            "glide",
+            "disaster_group",
+            "disaster_subgroup",
+            "disaster_type",
+            "disaster_subtype",
+            "event_name",
+            "country",
+            "iso",
+            "region",
+            "continent",
+            "location",
+            "associated_dis",
+            "dis_mag_value",
+            "dis_mag_scale",
+            "start_data",
+            "end_data",
+            "total_deaths",
+            "no_injured",
+            "no_affected",
+            "no_homeless",
+            "total_affected",
+            "total_damages",
+        )
+
+
+@admin.register(Datos)
+class DatosAdmin(ImportExportModelAdmin):
+    resource_class = DatosResource
     list_display = (
         "year",
         "seq",
@@ -29,8 +90,81 @@ class DatosAdmin(admin.ModelAdmin):
         "total_affected",
         "total_damages",
     )
-    search_fields = ("year", "seq")
-    list_filter = ("year", "seq")
-
-
-admin.site.register(Datos, DatosAdmin)
+    list_filter = (
+        "year",
+        "seq",
+        "glide",
+        "disaster_group",
+        "disaster_subgroup",
+        "disaster_type",
+        "disaster_subtype",
+        "event_name",
+        "country",
+        "iso",
+        "region",
+        "continent",
+        "location",
+        "associated_dis",
+        "dis_mag_value",
+        "dis_mag_scale",
+        "start_data",
+        "end_data",
+        "total_deaths",
+        "no_injured",
+        "no_affected",
+        "no_homeless",
+        "total_affected",
+        "total_damages",
+    )
+    search_fields = (
+        "year",
+        "seq",
+        "glide",
+        "disaster_group",
+        "disaster_subgroup",
+        "disaster_type",
+        "disaster_subtype",
+        "event_name",
+        "country",
+        "iso",
+        "region",
+        "continent",
+        "location",
+        "associated_dis",
+        "dis_mag_value",
+        "dis_mag_scale",
+        "start_data",
+        "end_data",
+        "total_deaths",
+        "no_injured",
+        "no_affected",
+        "no_homeless",
+        "total_affected",
+        "total_damages",
+    )
+    ordering = (
+        "year",
+        "seq",
+        "glide",
+        "disaster_group",
+        "disaster_subgroup",
+        "disaster_type",
+        "disaster_subtype",
+        "event_name",
+        "country",
+        "iso",
+        "region",
+        "continent",
+        "location",
+        "associated_dis",
+        "dis_mag_value",
+        "dis_mag_scale",
+        "start_data",
+        "end_data",
+        "total_deaths",
+        "no_injured",
+        "no_affected",
+        "no_homeless",
+        "total_affected",
+        "total_damages",
+    )
