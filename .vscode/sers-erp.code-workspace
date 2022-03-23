@@ -1,0 +1,42 @@
+{
+	"folders": [
+		{
+			"path": "..",
+			"name": "estudio_clima"
+		},
+	],
+	"settings": {
+		"editor.formatOnSave": true,
+		"editor.acceptSuggestionOnCommitCharacter": true,
+		"editor.formatOnPaste": true,
+		"editor.formatOnType": true,
+		"editor.tabSize": 2,
+		"editor.renderControlCharacters": true,
+		"editor.fontSize": 16,
+		"editor.fontFamily": "Consolas, 'Courier New', monospace",
+		// Python
+		"python.linting.pylintEnabled": true,
+		"python.formatting.provider": "black",
+		"python.formatting.blackArgs": [
+			"--line-length=119",
+			"--fast",
+			"--diff"
+		],
+		"python.sortImports.args": [
+			"--profile=black",
+		],
+		"[python]": {
+			"editor.codeActionsOnSave": {
+				"source.organizeImports": true,
+				"python.sortImports": true,
+				"python.formatting.formatOnSave": true,
+				"python.formatting.formatOnType": true,
+				"python.formatting.formatOnPaste": true,
+			}
+		},
+		"python.linting.enabled": true,
+		"python.linting.pylintArgs": [
+			"--load-plugins=pylint_django"
+		],
+	}
+}
