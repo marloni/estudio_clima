@@ -5,7 +5,6 @@ from app.clima.models import Registro
 class RegistroAdmin(admin.ModelAdmin):
     list_display = (
         "agnio",
-        "glide",
         "subgrupo_desastres",
         "tipo_desastre",
         "subtipo_desastre",
@@ -14,7 +13,6 @@ class RegistroAdmin(admin.ModelAdmin):
         "iso",
         "region",
         "continente",
-        "ubicacion",
         "desastre_asociado",
         "magnitud_desastre",
         "escala_desastre",
@@ -27,17 +25,14 @@ class RegistroAdmin(admin.ModelAdmin):
         "total_danos",
     )
     list_filter = (
-        "agnio",
-        "glide",
-        "subgrupo_desastres",
         "tipo_desastre",
-        "subtipo_desastre",
-        "pais",
-        "region",
-        "continente",
-        "magnitud_desastre",
+        "subgrupo_desastres",
         "escala_desastre",
+        "continente",
+        "region",
+        "pais",
     )
+    list_per_page = 50
     search_fields = (
         "agnio",
         "glide",
