@@ -1,3 +1,4 @@
+from dataclasses import field
 from django.contrib import admin
 from app.clima.models import Registro
 
@@ -58,6 +59,55 @@ class RegistroAdmin(admin.ModelAdmin):
     )
     ordering = ("agnio",)
     date_hierarchy = "fecha_inicio"
+
+    fieldsets = (
+        ("Año", {"fields": ("agnio",)}),
+        (
+            "Desastre",
+            {
+                "fields": (  # Campos
+                    "subgrupo_desastres",
+                    "tipo_desastre",
+                    "subtipo_desastre",
+                    "nombre_evento",
+                ),
+            },
+        ),
+        (
+            "Ubicación",
+            {
+                "fields": (
+                    "pais",
+                    "iso",
+                    "continente",
+                    "region",
+                    "ubicacion",
+                )
+            },
+        ),
+        (
+            "Desastre asociado",
+            {
+                "fields": (
+                    "desastre_asociado",
+                    "magnitud_desastre",
+                    "escala_desastre",
+                )
+            },
+        ),
+        (
+            "Fechas",
+            {
+                "fields": (
+                    "fecha_inicio",
+                    "fecha_finalizacion",
+                )
+            },
+        ),
+        ("Muertes", {"fields": ("total_muertes", "no_lesionados")}),
+        ("Desaparecidos", {"fields": ("no_desaparecidos", "total_desaparecidos")}),
+        ("Daños", {"fields": ("total_danos",)}),
+    )
 
 
 admin.site.register(Registro, RegistroAdmin)
