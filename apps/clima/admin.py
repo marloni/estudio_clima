@@ -1,6 +1,6 @@
 from dataclasses import field
 from django.contrib import admin
-from app.clima.models import Registro
+from apps.clima.models import Registro
 
 
 class RegistroAdmin(admin.ModelAdmin):
