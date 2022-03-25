@@ -18,5 +18,6 @@ from django.urls import include, path
 
 urlpatterns = [
     path("grappelli/", include("grappelli.urls")),
+    path("django_plotly_dash/", include("django_plotly_dash.urls")),
     path("", admin.site.urls),
 ]
