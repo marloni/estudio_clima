@@ -34,7 +34,6 @@ ALLOWED_HOSTS = []
 
 INSTALLED_APPS = [
     "grappelli",
-    "django_plotly_dash.apps.DjangoPlotlyDashConfig",
     "django.contrib.admin",
     "django.contrib.auth",
     "django.contrib.contenttypes",
@@ -43,7 +42,6 @@ INSTALLED_APPS = [
     "django.contrib.staticfiles",
     "apps",
     "apps.clima",
-    "apps.informes",
 ]
 
 MIDDLEWARE = [
