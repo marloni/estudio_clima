@@ -12,6 +12,9 @@
 		"python.linting.pylintEnabled": true,
 		"python.formatting.autopep8Path": "/opt/conda/bin/autopep8",
 		"python.formatting.yapfPath": "/opt/conda/bin/yapf",
+		"python.formatting.blackPath": "/opt/conda/bin/black",
+		// formating on save
+		"python.formatting.formatOnSave": true,
 		"python.linting.flake8Path": "/opt/conda/bin/flake8",
 		"python.linting.pycodestylePath": "/opt/conda/bin/pycodestyle",
 		"python.linting.pydocstylePath": "/opt/conda/bin/pydocstyle",
