@@ -144,5 +144,5 @@ static/
 __pycache__
 db.sqlite3
 media
-migrations
-data
+migrations/
+data/
