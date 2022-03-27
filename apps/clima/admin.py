@@ -1,6 +1,7 @@
 from dataclasses import field
+from re import A
 from django.contrib import admin
-from apps.clima.models import Registro
+from apps.clima.models import Registro, Datos
 
 
 class RegistroAdmin(admin.ModelAdmin):
@@ -64,46 +65,11 @@ class RegistroAdmin(admin.ModelAdmin):
         ("Año", {"fields": ("agnio",)}),
         (
             "Desastre",
-            {
-                "fields": (  # Campos
-                    "subgrupo_desastres",
-                    "tipo_desastre",
-                    "subtipo_desastre",
-                    "nombre_evento",
-                ),
-            },
+            {"fields": ("subgrupo_desastres", "tipo_desastre", "subtipo_desastre", "nombre_evento",),},  # Campos
         ),
-        (
-            "Ubicación",
-            {
-                "fields": (
-                    "pais",
-                    "iso",
-                    "continente",
-                    "region",
-                    "ubicacion",
-                )
-            },
-        ),
-        (
-            "Desastre asociado",
-            {
-                "fields": (
-                    "desastre_asociado",
-                    "magnitud_desastre",
-                    "escala_desastre",
-                )
-            },
-        ),
-        (
-            "Fechas",
-            {
-                "fields": (
-                    "fecha_inicio",
-                    "fecha_finalizacion",
-                )
-            },
-        ),
+        ("Ubicación", {"fields": ("pais", "iso", "continente", "region", "ubicacion",)},),
+        ("Desastre asociado", {"fields": ("desastre_asociado", "magnitud_desastre", "escala_desastre",)},),
+        ("Fechas", {"fields": ("fecha_inicio", "fecha_finalizacion",)},),
         ("Muertes", {"fields": ("total_muertes", "no_lesionados")}),
         ("Desaparecidos", {"fields": ("no_desaparecidos", "total_desaparecidos")}),
         ("Daños", {"fields": ("total_danos",)}),
@@ -111,3 +77,4 @@ class RegistroAdmin(admin.ModelAdmin):
 
 
 admin.site.register(Registro, RegistroAdmin)
+admin.site.register(Datos)
