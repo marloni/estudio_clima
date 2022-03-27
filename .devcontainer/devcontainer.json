@@ -14,7 +14,39 @@
 		"python.formatting.yapfPath": "/opt/conda/bin/yapf",
 		"python.formatting.blackPath": "/opt/conda/bin/black",
 		// formating on save
+		// format for ipynb files
+		"python.formatting.formatOnSave.enabled": true,
+		"python.formatting.formatOnSave.extensions": [
+			".ipynb",
+			".py",
+			".pyw",
+			".pyi",
+			".pyx",
+			".pxd",
+			".pxi",
+		],
+		// format for python files
 		"python.formatting.formatOnSave": true,
+		"python.formatting.blackArgs": [
+			"--line-length",
+			"120",
+			"--target-version",
+			"py37",
+			"--fast",
+			"--diff",
+		],
+		// black formatting for notebooks
+		"python.formatting.blackOnSave": true,
+		"python.formatting.blackOnSave.extensions": [
+			".ipynb",
+			".py",
+			".pyw",
+			".pyi",
+			".pyx",
+			".pxd",
+			".pxi",
+		],
+		"python.formatting.provider": "black",
 		"python.linting.flake8Path": "/opt/conda/bin/flake8",
 		"python.linting.pycodestylePath": "/opt/conda/bin/pycodestyle",
 		"python.linting.pydocstylePath": "/opt/conda/bin/pydocstyle",
