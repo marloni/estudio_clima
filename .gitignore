@@ -144,3 +144,5 @@ static/
 __pycache__
 db.sqlite3
 media
+apps/clima/migrations/0002_datos.py
+apps/clima/migrations/0003_datos_index_alter_datos_admin1code_and_more.py
